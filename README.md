@@ -1,3 +1,5 @@
+# How to play
+
 Click letter tiles in the first row of the board to form words. Words must be
 present in the built-in 178,691 word Tournament Word List and also must be at
 least 3 letters long. 
@@ -15,3 +17,13 @@ back to where it came from.
 
 Click **Clear** to remove all tiles in current word area and move them each back
 to where they came from.
+
+# Development notes
+
+The `src` directory contains an old version of the game written with [PyGTK][].
+
+The `wx` directory contains the newer version of the game written with [wxPython][].
+
+
+[PyGTK]: https://pypi.org/project/PyGTK/
+[wxPython]: https://wxpython.org/
