@@ -197,7 +197,7 @@ class MainWindow(wx.Frame):
         if not os.path.exists(data_dir):
             try:
                 os.makedirs(data_dir)
-            except Exception, e:
+            except Exception as e:
                 sys.stderr.write('Could not create data directory: %s\n' % data_dir)
                 data_dir = None
         self.top_score_manager.set_data_dir(data_dir)
