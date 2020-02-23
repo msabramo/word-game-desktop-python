@@ -38,7 +38,7 @@ class TopScoreManager(object):
         top_scores = []
 
         try:
-            top_scores_file = file(self.top_scores_filepath(), 'rb')
+            top_scores_file = open(self.top_scores_filepath(), 'rb')
         except IOError:
             return top_scores
         
@@ -48,7 +48,7 @@ class TopScoreManager(object):
             top_scores_file.close()
             sys.stdout.write('Read from top_scores file %s\n'
                              % self.top_scores_filepath())
-        except EOFError, e:
+        except EOFError as e:
             sys.stderr.write('Exception: %s\n' % e)
             top_scores_file.close()
             ret = os.remove(top_scores_file.name)
@@ -60,7 +60,7 @@ class TopScoreManager(object):
         old_umask = os.umask(0)
         
         try:
-            top_scores_file = file(self.top_scores_filepath(), 'wb')
+            top_scores_file = open(self.top_scores_filepath(), 'wb')
         except IOError:
             sys.stderr.write('Cannot write to top_scores file %s!\n'
                              % self.top_scores_filepath())
