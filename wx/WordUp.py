@@ -184,16 +184,7 @@ class MainWindow(wx.Frame):
         sys.exit(0)
 
     def GetDataDir(self):
-        if sys.platform == 'darwin':
-            data_dir = wx.StandardPaths.Get().GetUserDataDir()
-            if '/Library' in data_dir:
-                data_dir = data_dir[data_dir.index('/Library'):]
-        elif sys.platform == 'win32':
-            data_dir = wx.StandardPaths.Get().GetConfigDir()
-        else:
-            data_dir = wx.StandardPaths.Get().GetDataDir()
-        
-        return data_dir
+        return wx.StandardPaths.Get().GetUserDataDir()
         
     def InitGame(self, event=None):
         self.dictionary = Dictionary.Dictionary('resources/dictionaries/twl_split')
