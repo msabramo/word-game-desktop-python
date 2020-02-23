@@ -24,6 +24,16 @@ The `src` directory contains an old version of the game written with [PyGTK][].
 
 The `wx` directory contains the newer version of the game written with [wxPython][].
 
+To set this up on a Mac, install the official Python.org installer for Python
+2.7 and then `pip install wxpython`.
+
+To run the game, do:
+
+```
+cd wx
+python WordUp.py
+```
+
 
 [PyGTK]: https://pypi.org/project/PyGTK/
 [wxPython]: https://wxpython.org/
