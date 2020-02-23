@@ -55,12 +55,12 @@ class MainWindow(wx.Frame):
         self.wordPanel = self.WordPanel(parent=self.panel, sizer=self.vbox)
         self.buttons = self.Buttons(parent=self.panel, sizer=self.vbox)
         self.board_widget = self.Board(parent=self.panel, sizer=self.vbox)
-        iPhoneButton = wx.Button(parent=self.panel,
-                                 label='Get Word Up! for iPhone/iPod Touch...')
-        iPhoneButton.Bind(wx.EVT_BUTTON,
-                          lambda event: webbrowser.open(
-            'http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=290594543&mt=8'))
-        self.vbox.Add(iPhoneButton, flag=wx.BOTTOM|wx.LEFT, border=20)
+        # iPhoneButton = wx.Button(parent=self.panel,
+        #                          label='Get Word Up! for iPhone/iPod Touch...')
+        # iPhoneButton.Bind(wx.EVT_BUTTON,
+        #                   lambda event: webbrowser.open(
+        #     'http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=290594543&mt=8'))
+        # self.vbox.Add(iPhoneButton, flag=wx.BOTTOM|wx.LEFT, border=20)
         self.vbox.Layout()
 
         def focus(e):
