@@ -6,7 +6,6 @@ import sys
 import webbrowser
 import wx, wx.adv, wx.html, wx.lib.buttons
 
-sys.path.append('../src')
 import Board, BoardWidget, Dictionary, Game, Utils, TopScoreManager
 from Dialogs.AboutDialog import AboutDialog
 from Dialogs.HelpDialog import HelpDialog
