@@ -8,7 +8,7 @@ class GameDetails(wx.ListCtrl, listmix.ColumnSorterMixin):
 
     def __init__(self, parent, game):
         if sys.platform == 'darwin':
-            wx.SystemOptions.SetOptionInt("mac.listctrl.always_use_generic", False)
+            wx.SystemOptions.SetOption("mac.listctrl.always_use_generic", False)
         
         wx.ListCtrl.__init__(self, parent, style=wx.LC_REPORT)
         self.PopulateList(game)
@@ -46,10 +46,10 @@ class GameDetails(wx.ListCtrl, listmix.ColumnSorterMixin):
         self.SetColumnWidth(2, 70)
 
     def AddWord(self, time, word, word_score):
-        index = self.InsertStringItem(sys.maxint, '')
+        index = self.InsertItem(sys.maxint, '')
         item = (time, word, word_score)
         for columnIdx in range(0, 3):
-            self.SetStringItem(index, columnIdx, str(item[columnIdx]))
+            self.SetItem(index, columnIdx, str(item[columnIdx]))
         self.SetItemData(index, index)
         self.itemDataMap[len(self.itemDataMap)] = item
         if hasattr(self, '_col'): self.SortListItems()

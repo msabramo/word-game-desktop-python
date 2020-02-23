@@ -31,7 +31,7 @@ class TopScoreDialog(wx.Frame, listmix.ColumnSorterMixin):
         self.panel.SetSizer(vbox)
 
         if sys.platform == 'darwin':
-            wx.SystemOptions.SetOptionInt("mac.listctrl.always_use_generic", False)
+            wx.SystemOptions.SetOption("mac.listctrl.always_use_generic", False)
         
         self.list = wx.ListCtrl(self.panel, style=wx.LC_REPORT)
         self.PopulateList(topScores)
@@ -81,14 +81,14 @@ class TopScoreDialog(wx.Frame, listmix.ColumnSorterMixin):
             end_time_str = end_time.strftime('%Y-%m-%d %H:%M')
             duration_str = str(end_time - start_time)
             
-            index = self.list.InsertStringItem(sys.maxint, '')
+            index = self.list.InsertItem(sys.maxint, '')
             item = (index + 1,
                     score,
                     duration_str,
                     name,
                     end_time_str)
             for columnIdx in range(0, 5):
-                self.list.SetStringItem(index, columnIdx, str(item[columnIdx]))
+                self.list.SetItem(index, columnIdx, str(item[columnIdx]))
             self.list.SetItemData(index, index)
             self.itemDataMap[index] = item
 
