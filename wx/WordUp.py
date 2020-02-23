@@ -1,6 +1,11 @@
 #!/usr/bin/env pythonw
 
-import datetime, os, os.path, sys, webbrowser, wx, wx.html, wx.lib.buttons
+import datetime
+import os
+import sys
+import webbrowser
+import wx, wx.adv, wx.html, wx.lib.buttons
+
 sys.path.append('../src')
 import Board, BoardWidget, Dictionary, Game, Utils, TopScoreManager
 from Dialogs.AboutDialog import AboutDialog
@@ -374,7 +379,7 @@ class MainWindow(wx.Frame):
         numChildren = len(wordTilesHbox.GetChildren())
         for i in range(0, num):
             wordTilesHbox.Hide(numChildren - i - 1)
-            wordTilesHbox.RemovePos(numChildren - i - 1)
+            wordTilesHbox.Remove(numChildren - i - 1)
         
         wordTilesHbox.Layout()
         self.RefreshButtonStates()
@@ -439,9 +444,9 @@ class MainWindow(wx.Frame):
         self.top_score_manager.check_if_top_score(score, self.game, application=self)
         
 
-app = wx.PySimpleApp()
-tileClickSound = wx.Sound('resources/sounds/Click03.wav')
-wordAddedSound = wx.Sound('resources/sounds/Click02.wav')
+app = wx.App()
+tileClickSound = wx.adv.Sound('resources/sounds/Click03.wav')
+wordAddedSound = wx.adv.Sound('resources/sounds/Click02.wav')
 app.SetAppName('Word Up!')
 frame = MainWindow(None, wx.ID_ANY, "Word Up!")
 app.MainLoop()

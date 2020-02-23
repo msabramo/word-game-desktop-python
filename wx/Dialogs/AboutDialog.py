@@ -1,4 +1,8 @@
-import sys, wx, wx.html, wx.lib.wxpTag, wx.lib.hyperlink as hl
+import sys
+import wx
+import wx.html
+import wx.lib.wxpTag
+import wx.lib.agw.hyperlink as hl
 
 _ = wx.GetTranslation
 
