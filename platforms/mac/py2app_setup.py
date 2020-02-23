@@ -3,7 +3,6 @@ import py2app
 
 import sys
 sys.path.append("../../wx")
-sys.path.append("../../src")
 
 setup(
     name = 'Word Up!',
@@ -21,7 +20,7 @@ setup(
     data_files=[
                    #'WordUp.glade',
                    'W.icns',
-                   '../../README',
+                   '../../README.md',
                    '../../wx/resources',
                ]
 )

@@ -34,6 +34,28 @@ cd wx
 python WordUp.py
 ```
 
+# Packaging Mac app
+
+## Setup
+
+```
+pip install --user py2app
+```
+
+## Packaging
+
+```
+cd platforms/mac
+make
+```
+
+The above command will create `dist/Word\ Up\!-1.1-folder/Word\ Up\!.app`. You
+can launch this using:
+
+```
+open dist/Word\ Up\!-1.1-folder/Word\ Up\!.app
+```
+
 
 [PyGTK]: https://pypi.org/project/PyGTK/
 [wxPython]: https://wxpython.org/
