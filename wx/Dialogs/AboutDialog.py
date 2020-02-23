@@ -43,13 +43,9 @@ class AboutDialog(wx.Dialog):
         okButton = wx.Button(self, wx.ID_OK)
         okButton.SetDefault()
         sz.Add(okButton, 0, wx.ALIGN_RIGHT|wx.RIGHT|wx.BOTTOM, 20)
-        self.Bind(wx.EVT_BUTTON, self.onOk, id = wx.ID_OK)
 
         self.SetSizer(sz)
         self.SetAutoLayout(True)
         sz.SetMinSize((300, -1))
         sz.Fit(self)
         self.CentreOnParent(wx.BOTH)
-
-    def onOk(self, evt):
-        self.Close()
