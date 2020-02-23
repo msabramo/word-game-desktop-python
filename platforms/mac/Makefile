@@ -1,3 +1,5 @@
+.PHONY: app
+
 DITTO 				= /usr/bin/ditto
 PYTHON 				= /usr/local/bin/python
 HDIUTIL 			= /usr/bin/hdiutil
@@ -35,6 +37,8 @@ $(FOLDER): $(APP_BUNDLE)
 
 # $(APP_BUNDLE_i386): $(APP_BUNDLE)
 # 	$(DITTO) --rsrc --arch i386 "$<" "$@"
+
+app: $(APP_BUNDLE)
 
 $(APP_BUNDLE): py2app_setup.py
 	$(PYTHON) "$<" py2app --packages=wx
