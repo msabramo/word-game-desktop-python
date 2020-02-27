@@ -1,0 +1,3 @@
+#!/bin/sh
+
+( cd ../../wx && python -c 'from Version import VERSION; print(VERSION)' )

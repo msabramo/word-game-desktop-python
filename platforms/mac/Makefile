@@ -1,5 +1,3 @@
-.PHONY: app
-
 DITTO 				= /usr/bin/ditto
 PYTHON 				= /usr/local/bin/python
 HDIUTIL 			= /usr/bin/hdiutil
@@ -8,7 +6,7 @@ MV					= /bin/mv
 LN					= /bin/ln
 
 PRODUCT 			= Word\ Up!
-VERSION 			= 1.1
+VERSION 			:= $(shell ./get-version)
 PRODUCTVERSION 		= $(PRODUCT)-$(VERSION)
 APP_BUNDLE 			= dist/$(PRODUCT).app
 # APP_BUNDLE_i386 	= dist/$(PRODUCT)-i386.app
@@ -16,6 +14,8 @@ FOLDER 				= dist/$(PRODUCTVERSION)-folder
 # FOLDER_i386 		= dist/$(PRODUCTVERSION)-i386-folder
 DMG 				= dist/$(PRODUCTVERSION).dmg
 # DMG_i386 			= dist/$(PRODUCTVERSION)-i386.dmg
+
+.PHONY: app
 
 all: $(DMG)
 

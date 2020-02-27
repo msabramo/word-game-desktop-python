@@ -13,9 +13,7 @@ from Dialogs.TopScoreDialog import TopScoreDialog
 from Dialogs.WordsLeftDialog import WordsLeftDialog
 from Dialogs.GameDetailsDialog import GameDetails
 
-FREE_EDITION = False
-VERSION = '1.1'
-if FREE_EDITION: VERSION += '-free'
+from Version import VERSION, FREE_EDITION
 
 ID_SHOW_TOP_SCORES = 100
 ID_TOGGLE_GAME_DETAILS = 200
