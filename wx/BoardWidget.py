@@ -55,7 +55,7 @@ class BoardWidget(wx.BoxSizer):
 
     def RefreshColumn(self, colIdx):
         columnVbox = self.GetChildren()[colIdx].GetSizer()
-        columnVbox.Clear(deleteWindows=True)
+        columnVbox.Clear(delete_windows=True)
         
         self.Remove(colIdx)
         self.Insert(colIdx,  self.GetColumnVbox(colIdx, self.board.cols[colIdx]))
